@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 
+  before_action :basic_auth
+
   def index
     @items = Item.includes(:user)
   end
