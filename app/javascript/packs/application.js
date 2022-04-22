@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+//require("turbolinks").start() # 画面遷移する際、次のページのHTMLだけを読み込み、遷移の速度上昇を担うためのコード（turbolinks）
 require("@rails/activestorage").start()
 require("channels")
 
