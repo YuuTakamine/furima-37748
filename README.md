@@ -11,7 +11,7 @@
 | first_name         | string              | null: false                  |
 | last_name_kana     | string              | null: false                  |
 | first_name_kana    | string              | null: false                  |
-| birthday           | datetime            | null: false                  |
+| birthday           | date                | null: false                  |
 
 ### Association
 
@@ -20,19 +20,17 @@
 
 ## items_table
 
-| Column            | Type                | Options                       |
-|-------------------|---------------------|-------------------------------|
-| item_name         | string              | null: false                   |
-| item_explanation  | text                | null: false                   |
-| item_detail       | string              | null: false                   |
-| delivery          | string              | null: false                   |
-| price             | integer             | null: false                   |
-| category          | integer             | null: false                   |
-| product_condition | integer             | null: false                   |
-| delivery_borden   | integer             | null: false                   |
-| sipping_area      | integer             | null: false                   |
-| days_to_ship      | integer             | null: false                   |
-| user              | references          | null: false, foreign_key: true|
+| Column               | Type                | Options                       |
+|----------------------|---------------------|-------------------------------|
+| item_name            | string              | null: false                   |
+| item_explanation     | text                | null: false                   |
+| price                | integer             | null: false                   |
+| category_id          | integer             | null: false                   |
+| product_condition/id | integer             | null: false                   |
+| delivery_borden_id   | integer             | null: false                   |
+| sipping_area_id      | integer             | null: false                   |
+| days_to_ship_id      | integer             | null: false                   |
+| user                 | references          | null: false, foreign_key: true|
 
 ### Association
 
@@ -52,12 +50,12 @@
 * belong_to :item
 * has_one   :sipping_address
 
-## sipping_address_table
+## sipping_addresses_table
 
 | Column             | Type                | Options                       |
 |--------------------|---------------------|-------------------------------|
 | postal_code        | string              | null: false                   |
-| prefecture_id      | string              | null: false                   |
+| sipping_area_id    | string              | null: false                   |
 | municipalities     | string              | null: false                   |
 | address            | string              | null: false                   |
 | building_name      | string              |                               |
