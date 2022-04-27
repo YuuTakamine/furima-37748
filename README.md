@@ -26,7 +26,7 @@
 | item_explanation     | text                | null: false                   |
 | price                | integer             | null: false                   |
 | category_id          | integer             | null: false                   |
-| product_condition/id | integer             | null: false                   |
+| product_condition_id | integer             | null: false                   |
 | delivery_borden_id   | integer             | null: false                   |
 | sipping_area_id      | integer             | null: false                   |
 | days_to_ship_id      | integer             | null: false                   |
@@ -35,7 +35,7 @@
 ### Association
 
 * belongs_to :user
-* has_one    :buys
+* has_one    :buy
 
 ## buys_table
 
@@ -46,8 +46,8 @@
 
 ### Association
 
-* belong_to :user
-* belong_to :item
+* belongs_to :user
+* belongs_to :item
 * has_one   :sipping_address
 
 ## sipping_addresses_table
@@ -55,7 +55,7 @@
 | Column             | Type                | Options                       |
 |--------------------|---------------------|-------------------------------|
 | postal_code        | string              | null: false                   |
-| sipping_area_id    | string              | null: false                   |
+| sipping_area_id    | integer             | null: false                   |
 | municipalities     | string              | null: false                   |
 | address            | string              | null: false                   |
 | building_name      | string              |                               |
@@ -64,4 +64,4 @@
 
 ### Association
 
-* belong_to :buy
+* belongs_to :buy
