@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 
   def index
     #@items = Item.includes(:user)
-    @items = Item.order("created_at DESC")
+    #@items = Item.order("created_at DESC")
   end
 
   def new
@@ -27,18 +27,18 @@ class ItemsController < ApplicationController
   #  item.destroy
   #end
 
-  def show
-    @items = Item.find(params[:id])
-  end
+  #def show
+    #@items = Item.find(params[:id])
+  #end
 
-  def edit
-    @items = Item.find(params[:id])
-  end
+  #def edit
+    #@items = Item.find(params[:id])
+  #end
 
-  def update
-    @items = Item.find(params[:id])
-    @items.update(item_params)
-  end
+  #def update
+    #@items = Item.find(params[:id])
+    #@items.update(item_params)
+  #end
 
 private
   def item_params
