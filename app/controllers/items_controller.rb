@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :basic_auth
   #before_action :move_to_index, except: [:index, :show]
   
@@ -26,9 +26,9 @@ class ItemsController < ApplicationController
   #  item.destroy
   #end
 
-  #def show
-    #@item = Item.find(params[:id])
-  #end
+  def show
+    @item = Item.find(params[:id])
+  end
 
   #def edit
     #@item = Item.find(params[:id])
