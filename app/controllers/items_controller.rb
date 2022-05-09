@@ -17,7 +17,6 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      @item = Item.includes(:user)
       render :new
     end 
   end
@@ -27,18 +26,18 @@ class ItemsController < ApplicationController
   #  item.destroy
   #end
 
-  def show
-    @item = Item.find(params[:id])
-  end
+  #def show
+    #@item = Item.find(params[:id])
+  #end
 
-  def edit
-    @item = Item.find(params[:id])
-  end
+  #def edit
+    #@item = Item.find(params[:id])
+  #end
 
-  def update
-    @item = Item.find(params[:id])
-    @item.update(item_params)
-  end
+  #def update
+   # @item = Item.find(params[:id])
+    #@item.update(item_params)
+  #end
 
 private
   def item_params
