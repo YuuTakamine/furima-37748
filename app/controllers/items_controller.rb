@@ -5,17 +5,16 @@ class ItemsController < ApplicationController
   
 
   def index
-    #@items = Item.includes(:user)
-    #@items = Item.order("created_at DESC")
+    @items = Item.order("created_at desc")
   end
 
   def new
-    @items = Item.new
+    @item = Item.new
   end
   
   def create
-    @items = Item.new(item_params)
-    if @items.save
+    @item = Item.new(item_params)
+    if @item.save
       redirect_to root_path
     else
       render :new
@@ -28,16 +27,16 @@ class ItemsController < ApplicationController
   #end
 
   #def show
-    #@items = Item.find(params[:id])
+    #@item = Item.find(params[:id])
   #end
 
   #def edit
-    #@items = Item.find(params[:id])
+    #@item = Item.find(params[:id])
   #end
 
   #def update
-    #@items = Item.find(params[:id])
-    #@items.update(item_params)
+   # @item = Item.find(params[:id])
+    #@item.update(item_params)
   #end
 
 private
