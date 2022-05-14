@@ -47,7 +47,7 @@ private
     params.require(:item).permit(:user_id, :image,:item_name,:item_explanation,:price,:category_id,:product_condition_id,:delivery_borden_id,:sipping_area_id,:days_to_ship_id).merge(user_id: current_user.id)
   end
 
-  def set_prototype
+  def set_item
     @item = Item.find(params[:id])
   end
   
