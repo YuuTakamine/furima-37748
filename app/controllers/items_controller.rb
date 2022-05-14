@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :basic_auth
-  before_action :set_prototype, except: [:index, :new, :create]
+  before_action :set_item, except: [:index, :new, :create]
   #before_action :move_to_index, except: [:index, :show]
   
 
@@ -22,10 +22,13 @@ class ItemsController < ApplicationController
     end 
   end
 
-  #def destroy
-    #item = Item.find(params[:id])
-    #item.destroy
-  #end
+  def destroy
+    if current_user.id == @item.user_id
+      redirect_to root_path if @item.destroy
+    else
+      render :show
+    end
+ end
 
   def show
   end
